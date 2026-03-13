@@ -1,0 +1,119 @@
+[
+    {
+        "label": "matplotlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib",
+        "description": "matplotlib",
+        "detail": "matplotlib",
+        "documentation": {}
+    },
+    {
+        "label": "importlib.util",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "importlib.util",
+        "description": "importlib.util",
+        "detail": "importlib.util",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.pyplot",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.pyplot",
+        "description": "matplotlib.pyplot",
+        "detail": "matplotlib.pyplot",
+        "documentation": {}
+    },
+    {
+        "label": "matplotlib.patches",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "matplotlib.patches",
+        "description": "matplotlib.patches",
+        "detail": "matplotlib.patches",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "reflex_agent",
+        "kind": 2,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "def reflex_agent(state):\n    if state == \"Dirty\":\n        return \"Clean\"\n    else:\n        return \"Move\"\n#  Function to Draw the Grid\ndef draw_environment(ax, env, agent_pos, step):\n    ax.clear()\n    ax.set_xlim(0, 2) \n    ax.set_ylim(0, 2) ",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "draw_environment",
+        "kind": 2,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "def draw_environment(ax, env, agent_pos, step):\n    ax.clear()\n    ax.set_xlim(0, 2) \n    ax.set_ylim(0, 2) \n    ax.set_xticks([])\n    ax.set_yticks([]) \n    ax.set_title(f\"Step {step} — Agent in {rooms[agent_pos]}\")\n    for room, pos in room_positions.items():  \n        x, y = pos\n        color = 'red' if env[room] == \"Dirty\" else 'green'  ",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "environment",
+        "kind": 5,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "environment = {\n    \"Room1\": \"Clean\",\n    \"Room2\": \"Dirty\",   # Start with dirt here\n    \"Room3\": \"Clean\",\n    \"Room4\": \"Clean\"\n}\n# Mapping for grid positions\nroom_positions = {\n    \"Room1\": (0, 1),  # Top-left\n    \"Room2\": (1, 1),  # Top-right",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "room_positions",
+        "kind": 5,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "room_positions = {\n    \"Room1\": (0, 1),  # Top-left\n    \"Room2\": (1, 1),  # Top-right\n    \"Room3\": (0, 0),  # Bottom-left\n    \"Room4\": (1, 0)   # Bottom-right\n}\nrooms = list(environment.keys())  \nagent_index = 0  \n# Reflex Agent Function\ndef reflex_agent(state):",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "rooms",
+        "kind": 5,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "rooms = list(environment.keys())  \nagent_index = 0  \n# Reflex Agent Function\ndef reflex_agent(state):\n    if state == \"Dirty\":\n        return \"Clean\"\n    else:\n        return \"Move\"\n#  Function to Draw the Grid\ndef draw_environment(ax, env, agent_pos, step):",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "agent_index",
+        "kind": 5,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "agent_index = 0  \n# Reflex Agent Function\ndef reflex_agent(state):\n    if state == \"Dirty\":\n        return \"Clean\"\n    else:\n        return \"Move\"\n#  Function to Draw the Grid\ndef draw_environment(ax, env, agent_pos, step):\n    ax.clear()",
+        "detail": "demo",
+        "documentation": {}
+    },
+    {
+        "label": "steps",
+        "kind": 5,
+        "importPath": "demo",
+        "description": "demo",
+        "peekOfCode": "steps = 8  \nfor step in range(steps):\n    current_room = rooms[agent_index] \n    state = environment[current_room] \n    action = reflex_agent(state) \n    draw_environment(ax, environment, agent_index, step + 1) \n    if action == \"Clean\": # If the agent decides to clean, this line updates the environment, marking the room as \"Clean\".\n        environment[current_room] = \"Clean\"\n    else:\n        agent_index = (agent_index + 1) % len(rooms) ",
+        "detail": "demo",
+        "documentation": {}
+    }
+]
